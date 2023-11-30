@@ -1,0 +1,26 @@
+{% extends 'shopapp/base.html' %}
+<!--ШАБЛОН шаблон ШАБЛОН-->
+{% block title %}
+    Shop Index_def
+{% endblock %}
+
+{% block body %}
+    <h1>Goto pages:</h1>
+    <div>
+        <ul>
+            {% for page, page_url, page_name in pages %}
+                <li>{{ page }}:
+                <a href={{ page_url }}>{{ page_name }}</a> </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h2>API pages:</h2>
+        <ul>
+            {% for api_page, api_page_url, api_page_name in api_pages %}
+                <li>{{ api_page }}:
+                <a href={{ api_page_url }}>{{ api_page_name }}</a> </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

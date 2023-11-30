@@ -1,0 +1,21 @@
+{% extends 'shopapp/base.html' %}
+<!--ШАБЛОН шаблон ШАБЛОН-->
+{% block title %}
+    Create a new product
+{% endblock %}
+
+{% block body %}
+    <h1>Enter product info:</h1>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Create">
+        </form>
+    </div>
+    <br>
+    <div>
+        <a href="{% url 'shopapp:products_list' %}">Go back to products</a>
+    </div>
+{% endblock %}

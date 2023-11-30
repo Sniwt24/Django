@@ -1,0 +1,22 @@
+{% extends 'shopapp/base.html' %}
+<!--ШАБЛОН шаблон ШАБЛОН-->
+{% block title %}
+    Update order
+{% endblock %}
+
+{% block body %}
+    <h1>Update order info:</h1>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Update">
+        </form>
+    </div>
+    <br>
+    <div>
+        <a href="{% url 'shopapp:orders_list' %}">Go back to order</a>
+    </div>
+
+{% endblock %}

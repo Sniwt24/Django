@@ -1,0 +1,55 @@
+{% extends 'blogapp/base.html' %}
+
+{% block title %}
+    List of articles
+{% endblock %}
+
+{% block body %}
+    <h1>Articles:</h1>
+    {% if object_list %}
+        <ol>
+        {% for article in object_list %}
+            <li>
+            <div>
+                <p>Title: {{ article.title }}</p>
+                <p>Publication date: {{ article.pub_date }}</p>
+                <p>Author: {{ article.author.name }}</p>
+                <p>Category: {{ article.category.name }}</p>
+                <div>
+                    Tags for article:
+                    <ul>
+                        {% for tag in article.tags.all %}
+                            <li>{{ tag.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+                <br>
+            </li>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <h3>No articles</h3>
+    {% endif %}
+
+    <br>
+    <div>
+        <a href="{% url 'blogapp:article_create' %}">Create a new article</a>
+    </div>
+    <br>
+
+    <div>
+        <a href="{% url 'blogapp:author_create' %}">Create a new author</a>
+    </div>
+    <br>
+
+    <div>
+        <a href="{% url 'blogapp:category_create' %}">Create a new category</a>
+    </div>
+    <br>
+
+    <div>
+        <a href="{% url 'blogapp:tag_create' %}">Create a new tag</a>
+    </div>
+    <br>
+{% endblock %}

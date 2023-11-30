@@ -1,0 +1,10 @@
+{% extends 'requestdataapp/base.html' %}
+
+{% block title %}
+    Demo request params
+{% endblock %}
+
+{% block body %}
+    <h1>Hello {{ name }} {{ fname }} !</h1>
+    <p>You are make {{ request.method }} request!</p>
+{% endblock %}

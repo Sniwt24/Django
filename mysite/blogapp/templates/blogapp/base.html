@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            BT
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'shopapp:index_def' %}">
+            <img src="{{ '/media/img/home.png' }}" alt="Home" style="width: 50px; height: 50px;">
+        </a>
+    </header>
+        {% block body %}
+            BB
+        {% endblock %}
+    <br>
+    <h3> Additional info</h3>
+    <div>
+        {% now 'H:i' %}
+    </div>
+    <div>
+        {% now 'l' as current_weekday %}
+        Today is {{ current_weekday }}
+    </div>
+</body>
+</html>

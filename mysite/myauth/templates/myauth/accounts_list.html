@@ -1,0 +1,31 @@
+{% extends 'myauth/base.html' %}
+<!--ШАБЛОН шаблон ШАБЛОН-->
+{% block title %}
+    Accounts
+{% endblock %}
+
+{% block body %}
+
+
+    <h1>Users:</h1>
+        <ol>
+            {% for user in object_list %}
+                <li>
+                <a href="{% url 'myauth:details_profile' pk=user.pk %}"><h2>User ID = {{ user.pk }} :</h2></a>
+                {% if user.profile.avatar %}
+                    <img src="{{ user.profile.avatar.url }}" alt="{{ user.profile.avatar.name }}">
+
+                {% else %}
+                    <p>No image loaded</p>
+                {% endif %}
+                <div>
+                    <p>Username: {{ user.username }}</p>
+                    <p>Firstname: {{ user.first_name }}</p>
+                    <p>Lastname: {{ user.last_name }}</p>
+                    <p>Email: {{ user.email }}</p>
+                    <p>Bio: {{ user.profile.bio }}</p>
+                </div>
+                </li>
+            {% endfor %}
+        </ol>
+{% endblock %}

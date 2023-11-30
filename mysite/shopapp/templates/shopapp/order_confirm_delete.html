@@ -1,0 +1,21 @@
+{% extends 'shopapp/base.html' %}
+<!--ШАБЛОН шаблон ШАБЛОН-->
+{% block title %}
+    Confirm order delete
+{% endblock %}
+
+{% block body %}
+    <h1>Are you sure? Delete order to address {{ object.address }}?</h1>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Yes! Delete order">
+        </form>
+    </div>
+    <br>
+    <div>
+        <a href="{% url 'shopapp:orders_list' %}">No! Go back to orders</a>
+    </div>
+{% endblock %}

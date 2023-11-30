@@ -1,0 +1,109 @@
+[
+  {
+    "model": "shopapp.product",
+    "pk": 1,
+    "fields": {
+      "name": "Tablet",
+      "description": "Some tablet1",
+      "price": "1000.00",
+      "discount": 0,
+      "created_at": "2023-07-16T21:28:29.853Z",
+      "archived": true,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 2,
+    "fields": {
+      "name": "LapTop",
+      "description": "Good LapTop",
+      "price": "2500.00",
+      "discount": 10,
+      "created_at": "2023-07-16T21:30:00.118Z",
+      "archived": false,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 3,
+    "fields": {
+      "name": "Smartphone",
+      "description": "Grate smartphone",
+      "price": "500.00",
+      "discount": 5,
+      "created_at": "2023-07-16T22:36:19.804Z",
+      "archived": false,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 4,
+    "fields": {
+      "name": "DeskTop",
+      "description": "Great DesckTop",
+      "price": "3500.00",
+      "discount": 5,
+      "created_at": "2023-07-19T19:03:12.114Z",
+      "archived": false,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 5,
+    "fields": {
+      "name": "Watch",
+      "description": "Watch",
+      "price": "10.00",
+      "discount": 0,
+      "created_at": "2023-07-26T19:34:25.765Z",
+      "archived": false,
+      "created_by": 1
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 6,
+    "fields": {
+      "name": "Smart Watch",
+      "description": "Super",
+      "price": "300.00",
+      "discount": 0,
+      "created_at": "2023-07-26T19:42:14.978Z",
+      "archived": false,
+      "created_by": 3
+    }
+  },
+  {
+    "model": "shopapp.order",
+    "pk": 2,
+    "fields": {
+      "delivery_address": "Ugnaya 1",
+      "promocode": "ABC300",
+      "created_at": "2023-07-19T19:11:32.530Z",
+      "user": 1,
+      "products": [
+        4,
+        1
+      ]
+    }
+  },
+  {
+    "model": "shopapp.order",
+    "pk": 3,
+    "fields": {
+      "delivery_address": "Some address 3",
+      "promocode": "000",
+      "created_at": "2023-08-07T11:38:54.957Z",
+      "user": 1,
+      "products": [
+        4,
+        2,
+        6
+      ]
+    }
+  }
+]

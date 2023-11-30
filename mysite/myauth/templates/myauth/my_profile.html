@@ -1,0 +1,45 @@
+{% extends 'myauth/base.html' %}
+<!--ШАБЛОН шаблон ШАБЛОН-->
+{% block title %}
+    My profile
+{% endblock %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+    <h1>User ID = {{ user.pk }} :</h1>
+    <div>
+        {% if user.profile.avatar %}
+            <img src="{{ user.profile.avatar.url }}" alt="{{ user.profile.avatar.name }}">
+            {% if user.pk == request.user.pk or request.user.is_staff %}
+                <br>
+                <a href="{% url 'myauth:update_avatar' pk=user.profile.pk%}">reload</a>
+            {% endif %}
+        {% else %}
+            <p>No image loaded</p>
+            {% if user.pk == request.user.pk or request.user.is_staff %}
+                <br>
+                <a href="{% url 'myauth:update_avatar' pk=user.profile.pk%}">Load</a>
+            {% endif %}
+        {% endif %}
+        <p>Username: {{ user.username }}</p>
+        <p>Firstname{{ user.firstname }}</p>
+        <p>Lastname: {{ user.last }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Bio: {{ user.profile.bio }}</p>
+
+    </div>
+    {% else %}
+        <div>
+            <h1>User</h1>
+            <p>
+                Not authenticated
+            </p>
+        </div>
+    {% endif %}
+    <br>
+    <a href="{% url 'myauth:update_profile' pk=user.pk %}"><p>Update my info</p></a>
+    <br>
+    <div>
+        <a href="{% url 'myauth:accounts_list' %}">Go to users list</a>
+    </div>
+{% endblock %}

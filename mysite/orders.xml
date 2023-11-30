@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+    <object model="shopapp.order" pk="2">
+        <field name="delivery_address" type="TextField">Ugnaya 1</field>
+        <field name="promocode" type="CharField">ABC300</field>
+        <field name="created_at" type="DateTimeField">2023-07-19T19:11:32.530000+00:00</field>
+        <field name="user" rel="ManyToOneRel" to="auth.user">1</field>
+        <field name="products" rel="ManyToManyRel" to="shopapp.product">
+            <object pk="4"></object>
+            <object pk="1"></object>
+        </field>
+    </object>
+    <object model="shopapp.order" pk="3">
+        <field name="delivery_address" type="TextField">Some address 3</field>
+        <field name="promocode" type="CharField">000</field>
+        <field name="created_at" type="DateTimeField">2023-08-07T11:38:54.957000+00:00</field>
+        <field name="user" rel="ManyToOneRel" to="auth.user">1</field>
+        <field name="products" rel="ManyToManyRel" to="shopapp.product">
+            <object pk="4"></object>
+            <object pk="2"></object>
+            <object pk="6"></object>
+        </field>
+    </object>
+</django-objects>

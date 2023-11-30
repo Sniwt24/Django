@@ -1,0 +1,21 @@
+{% extends 'shopapp/base.html' %}
+<!--ШАБЛОН шаблон ШАБЛОН-->
+{% block title %}
+    Confirm product archived
+{% endblock %}
+
+{% block body %}
+    <h1>Are you sure? Archived product {{ object.name }}?</h1>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Yes! Archived product">
+        </form>
+    </div>
+    <br>
+    <div>
+        <a href="{% url 'shopapp:products_list' %}">No! Go back to products</a>
+    </div>
+{% endblock %}

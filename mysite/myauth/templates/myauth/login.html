@@ -1,0 +1,17 @@
+{% extends 'myauth/base.html' %}
+<!--ШАБЛОН шаблон ШАБЛОН-->
+{% block title %}
+    Login
+{% endblock %}
+
+{% block body %}
+    <h1>Login:</h1>
+    <div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="Login">
+    </form>
+    </div>
+{% endblock %}
